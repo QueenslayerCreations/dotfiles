@@ -1,0 +1,37 @@
+[user]
+  name = Aaron Griffin
+  email = aig787@gmail.com
+  signingkey = 46554A1A
+[alias]
+    # Pretty branch graphing http://stackoverflow.com/a/9074343
+  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) %C(bold yellow)%G?%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
+  # Alias suggestions from http://gitimmersion.com/
+  type = cat-file -t
+  dump = cat-file -p
+  co = checkout
+  ci = commit
+  cs = commit -S
+  #st = status
+  st = status -sb
+  br = branch
+    # Alias suggestions from Geoff Shannon
+  last = log -n1
+  ignore = !echo >> .gitignore
+  pack = !git archive -o $(basename $(pwd))-$(git tag | sort -rV | head -n1).zip HEAD
+  remotes = remote -v
+[core]
+  editor = vim
+  autocrlf = input
+  safecrlf = true
+  excludesfile = ~/.global_gitignore
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+[push]
+  default = simple
+[credential]
+  helper = cache --timeout=3600
