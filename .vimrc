@@ -1,9 +1,16 @@
+if has('nvim')
+  let s:editor_root=expand("~/.config/nvim")
+else
+  let s:editor_root=expand("~/.vim")
+endif
+
+
 set nocompatible              " be iMproved
 filetype off                  " required!
 
 set number
 
-set rtp+=~/.vim/bundle/Vundle.vim
+let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
 set cc=80
 set tabstop=2
 set shiftwidth=2
@@ -32,7 +39,7 @@ if $COLORTERM == 'xfce4-terminal'
 endif
 set t_Co=256
 
-call vundle#begin()
+call vundle#begin(s:editor_root . '/bundle')
 
 " let Vundle manage Vundle
 " required!  
@@ -52,8 +59,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-jade'
+Plugin 'rust-lang/rust.vim'
+Plugin 'Valloric/YouCompleteMe'
 " vim-scripts repos
 Plugin 'L9'
 Plugin 'FuzzyFinder'
