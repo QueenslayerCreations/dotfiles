@@ -50,6 +50,7 @@ Plugin 'gmarik/vundle'
 " My bundles here:
 "
 " original repos on GitHub
+Plugin 'nanotech/jellybeans.vim' 
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
